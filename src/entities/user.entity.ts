@@ -26,7 +26,7 @@ class User{
 
     @OneToMany(() => Contacts, (Contacts) => Contacts.user)
     contacts: Contacts[]
-
+    
 }
 
 export default User

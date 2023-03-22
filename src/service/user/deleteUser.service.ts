@@ -4,6 +4,7 @@ import { AppError } from "../../error/appError.error";
 import { iUser } from "../../interface/user.interface";
 
 export const deleteUserService = async (idUser: string): Promise<void> => {
+
   const userRepository = appDataSource.getRepository(User);
 
   const is_user: iUser | null = await userRepository.findOneBy({ id: idUser });
@@ -13,4 +14,5 @@ export const deleteUserService = async (idUser: string): Promise<void> => {
   }
 
   await userRepository.delete({ id: idUser });
+  
 };

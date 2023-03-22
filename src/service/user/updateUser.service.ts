@@ -8,6 +8,7 @@ export const updateUserService = async (
   idUser: string,
   data: iUser_update
 ): Promise<iUser> => {
+
   const clientRepository = appDataSource.getRepository(User);
 
   const is_user: iUser | null = await clientRepository.findOneBy({
@@ -37,4 +38,5 @@ export const updateUserService = async (
   const user: iUser = await clientRepository.findOneBy({ id: idUser });
 
   return user;
+  
 };

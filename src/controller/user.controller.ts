@@ -1,11 +1,10 @@
 import { instanceToPlain } from "class-transformer";
 import { Request, Response } from "express";
-import { iUser } from "../interface/client.interface";
+import { iUser } from "../interface/user.interface";
 import { createUserService } from "../service/user/createUser.service";
 import { deleteUserService } from "../service/user/deleteUser.service";
 import { listUsersService } from "../service/user/listUser.service";
 import { updateUserService } from "../service/user/updateUser.service";
-
 
 export const createUserController = async (req: Request, res: Response) => {
 
@@ -40,5 +39,5 @@ export const deleteUserController = async (req: Request, res: Response) => {
   const response: void = await deleteUserService(clientId);
 
   return res.status(204).json();
-  
+
 };

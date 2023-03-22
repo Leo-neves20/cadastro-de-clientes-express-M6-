@@ -5,6 +5,7 @@ import {
   listUsersController, 
   updateUserController 
 } from "../controller/user.controller";
+import tokenValidationMiddleware from "../middleware/tokenValidation.middleware";
 
 const userRouter = Router();
 
@@ -13,14 +14,17 @@ userRouter.post("/register",
 ),
 
 userRouter.patch("/update/:id",
+  tokenValidationMiddleware,
   updateUserController
 );
 
-userRouter.get("/list", 
+userRouter.get("/list",
+  tokenValidationMiddleware,
   listUsersController
 );
 
 userRouter.delete("/delete/:id",
+  tokenValidationMiddleware,
   deleteUserController
 );
 

@@ -1,3 +1,5 @@
+import { iContacts } from "./contacts.interface"
+
 export interface iUser{
     id: string,
     name: string,

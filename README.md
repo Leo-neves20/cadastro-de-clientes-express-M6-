@@ -104,7 +104,7 @@ ________________________________________________________________________________
     name: string,
     email: string,
     phone_number: string,
-    created_At: Date,
+    created_At: date,
 }
 ````
 
@@ -121,7 +121,7 @@ ________________________________________________________________________________
     name: string,
     email: string,
     phone_number: string,
-    created_At: Date,
+    created_At: date,
 }
 ````
 
@@ -133,7 +133,7 @@ ________________________________________________________________________________
 
 ````
 {
-	 name?: string,
+   name?: string,
    email?: string,
    phone_number?: string,
 }
@@ -142,11 +142,11 @@ ________________________________________________________________________________
 **Response:** 
 ````
 {
-	 id: string,
+   id: string,
    name: string,
    email: string,
    phone_number: string,
-   created_At: Date,
+   created_At: date,
 }
 ````
 
@@ -155,5 +155,96 @@ ________________________________________________________________________________
  - Exclui Usuário
 
 _______________________________________________________________________________________________________________________________________________________________________
+
+### :phone: Rotas de Contato
+
+### :lock: Rotas que precisam de autenticação
+
+🟢 **POST - /api/user/register**
+
+* Rota para fazer registro do usuário.
+
+**Request:**
+````
+{
+   name: string,
+   email: string,
+   phone_number: string,
+}`
+````
+	
+**Response:** 
+````
+{
+    name: string,
+    email: string,
+    phone_number: string,
+    user: {
+	id: string,
+	name: string,
+	email: string,
+	phone_number: string,
+	created_at: date
+    },
+    id: number,
+    registred_at: date
+}
+````
+
+🔵 **GET - /api/contact/list**
+
+* Lista apenas os contatos criados pelo usuário
+
+**Response:** 
+````
+{
+    {
+    id: string,
+    name: string,
+    email: string,
+    phone_number: string,
+    created_at: string,
+    contacts: [
+    	{
+	  id: string,
+          name: string,
+          email: string,
+          phone_number: string,
+          created_At: date,
+	}
+    ]
+}
+}
+````
+🟡 **PATCH - api/contact/update/:id-contato**
+
+ - Atualiza dados do contato, mas apenas o usuário que criou pode editar. 
+
+**Request:**
+
+````
+{
+   name?: string,
+   email?: string,
+   phone_number?: string,
+}
+````
+
+**Response:** 
+````
+{
+   id: string,
+   name: string,
+   email: string,
+   phone_number: string,
+   created_At: date,
+}
+````
+
+🔴 **DELETE - api/contact/delete/:id-contatos**
+
+ - Exclui contato, mas apenas o usuário que criou pode excluir.
+ 
+ _______________________________________________________________________________________________________________________________________________________________________
 
 

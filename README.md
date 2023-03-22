@@ -60,5 +60,25 @@ ________________________________________________________________________________
 
 ## :bullettrain_side: :construction: Rotas
 
+### :key: Rotas de Login
+
+* Rota para fazer o login.
+
+**Request:** 
+````
+{
+  email: string,
+  password: string
+}
+````
+
+**Response:** 
+````
+{
+  token: aoZJSJhOpjwQXDWKRtXz3HjucCaC08hw91vFxxswjIMzUNYxFefGoQZ75spo60XjgvCAWSFAtxPjdMnYpkxLH7E63aa2cf042609
+}
+````
+
+_______________________________________________________________________________________________________________________________________________________________________
 
 

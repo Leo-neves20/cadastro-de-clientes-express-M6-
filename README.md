@@ -81,4 +81,79 @@ ________________________________________________________________________________
 
 _______________________________________________________________________________________________________________________________________________________________________
 
+### :boy: Rotas de Usuário
+
+🟢 **POST - /api/user/register**
+
+* Rota para fazer registro do usuário.
+
+**Request:**
+````
+{
+	name: string,
+	email: string,
+	password: string,
+	phone_number: string,
+}`
+````
+	
+**Response:** 
+````
+{
+    id: string,
+    name: string,
+    email: string,
+    phone_number: string,
+    created_At: Date,
+}
+````
+
+### :lock: Rotas que precisam de autenticação
+
+🔵 **GET - /api/user/list**
+
+* Lista Todos os usuário
+
+**Response:** 
+````
+{
+    id: string,
+    name: string,
+    email: string,
+    phone_number: string,
+    created_At: Date,
+}
+````
+
+🟡 **PATCH - api/user/update/:id-user**
+
+ - Atualiza dados do usuário.
+
+**Request:**
+
+````
+{
+	 name?: string,
+   email?: string,
+   phone_number?: string,
+}
+````
+
+**Response:** 
+````
+{
+	 id: string,
+   name: string,
+   email: string,
+   phone_number: string,
+   created_At: Date,
+}
+````
+
+🔴 **DELETE - /api/user/delete/:id-user**
+
+ - Exclui Usuário
+
+_______________________________________________________________________________________________________________________________________________________________________
+
 

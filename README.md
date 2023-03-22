@@ -56,7 +56,9 @@ Para criar uma base de dados, você precisará selecionar a opção <strong>SQL<
 
 * **SECRET=KEY** = Essa chave precisa conter qualquer valor, só não de ser nula.
 
+_______________________________________________________________________________________________________________________________________________________________________
 
+## :bullettrain_side: :construction: Rotas
 
 
 

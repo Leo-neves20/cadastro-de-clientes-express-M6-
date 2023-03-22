@@ -6,6 +6,7 @@ import {
   updateContactController 
 } from "../controller/contact.controller";
 import tokenValidationMiddleware from "../middleware/tokenValidation.middleware";
+import clientPermissionMiddleware from "../middleware/userPermission.middleware";
 import validatedBody from "../schema/bodyValidation.schema";
 import { contactValidationCreate, contactValidationUpdate } from "../schema/contactValidation.schema";
 
@@ -25,12 +26,14 @@ contactsRoutes.get("/list",
 
 contactsRoutes.patch("/update/:id",
   tokenValidationMiddleware,
+  clientPermissionMiddleware,
   validatedBody(contactValidationUpdate),
   updateContactController
 );
 
 contactsRoutes.delete("/delete/:id",
   tokenValidationMiddleware,
+  clientPermissionMiddleware,
   deleteContactController
 );
 

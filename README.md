@@ -41,4 +41,17 @@ Para criar uma base de dados, você precisará selecionar a opção <strong>SQL<
 
 **O banco, se você não alterou, irá rodar na porta 5432 e no host localhost. Você irá preencher os demais campos com os dados da seu banco**
 
+* **DB_USER** = Esta chave precisa conter o nome <strong>"User"</strong> que há no seu banco.
+<div>
+  <img src=""/>
+</div>
+* **DB_PASSWORD** = Esta chave precisa conter a senha que você utilizou na criação do banco.
+* **DB_HOST** = Por padrão, a chave precisa precisa receber <strong>"localhost"</strong>.
+* **DB_PORT** = Por padrão, a chave precisa precisa receber <strong>"5432"</strong>, se a chave da porta não foi alterada na instalação do dbeaver.
+* **DB_NAME** = Essa chave precisa conter o nome exato da sua base de dados.
+* **SECRET=KEY** = Essa chave precisa conter qualquer valor, só não de ser nula.
+
+
+
+
 

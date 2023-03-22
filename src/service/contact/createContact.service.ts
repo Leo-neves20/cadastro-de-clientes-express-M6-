@@ -12,19 +12,19 @@ export const createContactService = async (
   data: iContacts_request,
   userId: string
 ): Promise<iContacts> => {
-    
+
   const contactRepository = appDataSource.getRepository(Contacts);
   const userRepository = appDataSource.getRepository(User);
 
   const user: iUser = await userRepository.findOneBy({ id: userId });
 
   const is_contact = await contactRepository
-    .createQueryBuilder("Register_contacts")
-    .innerJoinAndSelect("Register_contacts.client", "client")
-    .where("Register_contacts.email = :emailContact", {
+    .createQueryBuilder("Contacts")
+    .innerJoinAndSelect("Contacts.user", "user")
+    .where("Contacts.email = :emailContact", {
       emailContact: data.email,
     })
-    .andWhere("client.id = :idClient", { idClient: userId })
+    .andWhere("user.id = :idUser", { idUser: userId })
     .getOne();
 
   if (is_contact) {

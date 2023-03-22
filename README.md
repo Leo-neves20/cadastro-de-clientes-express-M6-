@@ -32,6 +32,11 @@ Para criar uma base de dados, você precisará selecionar a opção <strong>SQL<
 
 ### :two: Segunda etapa
 
-Você precisará fazer o clone deste repositório com o link <strong>Test Connection</strong>  
+1. **Fazer o clone do repositório neste link:** https://github.com/Leo-neves20/cadastro-de-clientes-express-M6-.git <br>
+2. **Abra o terminal e dê o comando "yarn" ou "npm i"** <br>
+3. **faça uma copia do arquivo <i>.env.example</i> e preencha com os dados do seu banco postgres.** <br>
+<div>
+  <img src=""/>
+</div>
 
 

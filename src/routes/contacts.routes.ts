@@ -6,11 +6,15 @@ import {
   updateContactController 
 } from "../controller/contact.controller";
 import tokenValidationMiddleware from "../middleware/tokenValidation.middleware";
+import validatedBody from "../schema/bodyValidation.schema";
+import { contactValidationCreate, contactValidationUpdate } from "../schema/contactValidation.schema";
+
 
 const contactsRoutes = Router();
 
 contactsRoutes.post("/register",
   tokenValidationMiddleware,
+  validatedBody(contactValidationCreate),
   createContactController
 );
 
@@ -21,6 +25,7 @@ contactsRoutes.get("/list",
 
 contactsRoutes.patch("/update/:id",
   tokenValidationMiddleware,
+  validatedBody(contactValidationUpdate),
   updateContactController
 );
 

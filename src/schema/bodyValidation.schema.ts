@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from "express"
 import {AnySchema} from "yup"
 
-const validatedBody = (schema: AnySchema) => (req: Request, res: Response, next: NextFunction) => {
+const validatedBody = (schema: AnySchema) => async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const validate = schema.validate(req.body,{
+        const validate = await schema.validate(req.body,{
             stripUnknown: true,
             abortEarly: true
         })
@@ -13,6 +13,7 @@ const validatedBody = (schema: AnySchema) => (req: Request, res: Response, next:
         next() 
 
     } catch (error) {
+
         return res.status(400).json({error: error})
         
     }

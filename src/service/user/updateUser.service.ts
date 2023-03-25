@@ -2,16 +2,16 @@ import { hashSync } from "bcrypt";
 import appDataSource from "../../data-source";
 import User from "../../entities/user.entity";
 import { AppError } from "../../error/appError.error";
-import { iUser, iUser_update } from "../../interface/user.interface";
+import { iUser, iUser_update_request } from "../../interface/user.interface";
 
 export const updateUserService = async (
   idUser: string,
-  data: iUser_update
+  data: iUser_update_request
 ): Promise<iUser> => {
 
   const clientRepository = appDataSource.getRepository(User);
 
-  const is_user: iUser | null = await clientRepository.findOneBy({
+  const is_user: iUser = await clientRepository.findOneBy({
     id: idUser,
   });
 

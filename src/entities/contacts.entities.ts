@@ -8,13 +8,13 @@ class Contacts{
     @PrimaryGeneratedColumn("increment")
     id: number
 
-    @Column()
+    @Column({nullable: false})
     name: string
 
-    @Column()
+    @Column({nullable: false})
     email: string
 
-    @Column()
+    @Column({nullable: false})
     phone_number: string
 
     @CreateDateColumn()

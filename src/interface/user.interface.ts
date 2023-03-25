@@ -9,6 +9,14 @@ export interface iUser{
     created_at: Date
 }
 
+export interface iUser_without_password{
+    id: string,
+    name: string,
+    email: string,
+    phone_number: string,
+    created_at: Date
+}
+
 export interface iUser_create_request{
     name: string,
     email: string,
@@ -24,7 +32,7 @@ export interface iUser_create_response{
     created_at: Date
 }
 
-export interface iUser_update{
+export interface iUser_update_request{
     name?: string,
     email?: string,
     password?: string,

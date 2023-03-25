@@ -10,12 +10,12 @@ const setDataSourceConfig = (): DataSourceOptions => {
     const entities = [path.join(__dirname, "./entities/**.{js,ts}")]
     const migrations = [path.join(__dirname, "./migrations/**.{js,ts}")]
 
-    if(node_env == "production"){
+    if(node_env == "test"){
         return {
-            type: "postgres",
-            url: process.env.DATABASE_URL,
-            entities,
-            migrations
+            type: "sqlite",
+            database: ":memory:",
+            synchronize: true,
+            entities: ['src/entities/*.ts']
         }
     }
 

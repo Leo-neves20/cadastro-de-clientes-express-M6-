@@ -11,7 +11,7 @@ const clientPermissionMiddleware = async (req: Request, res: Response, next: Nex
     const is_contact = await contactRepository.findOneBy({id: +req.params.id})
 
     if(!is_contact){
-        return res.status(404).json("Only who that created the contact is able to update or delete")
+        return res.status(404).json("contact not found")
 
     }
 

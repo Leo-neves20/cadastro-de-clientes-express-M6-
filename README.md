@@ -58,9 +58,11 @@ Para criar uma base de dados, você precisará selecionar a opção <strong>SQL<
 
 _______________________________________________________________________________________________________________________________________________________________________
 
-## :bullettrain_side: :construction: Rotas
+## :bullettrain_side: Rotas
 
 ### :key: Rotas de Login
+
+:heavy_exclamation_mark: Para rodar os test, é so dar o comando **"yarn test"** :heavy_exclamation_mark:
 
 * Rota para fazer o login.
 

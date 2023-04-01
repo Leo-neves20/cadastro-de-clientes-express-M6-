@@ -20,16 +20,7 @@ const pdfController = async (req: Request, res: Response) => {
 
     const docDefinition: TDocumentDefinitions = {
         defaultStyle: {font: "Helvetica"},
-        content: [
-                {
-                    table:{
-                        body:[
-                            ["Nome", "Email", "Telefone"],
-                            ...arrData
-                        ]
-                    }
-                }
-            ]
+        content: [{text: "aaaaaaaaaaaaaaaaaaaaaa"}]
     }
 
     const pdfDoc = printer.createPdfKitDocument(docDefinition)

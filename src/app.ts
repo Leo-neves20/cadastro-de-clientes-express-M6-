@@ -17,5 +17,4 @@ app.use("/api/login", loginRoutes)
 app.use("/api/contact", contactsRoutes)
 app.use("/api/pdf/generate", pdfRoutes)
 
-app.use(cors)
 app.use(handleError)

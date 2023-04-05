@@ -56,6 +56,11 @@ Para criar uma base de dados, você precisará selecionar a opção <strong>SQL<
 
 * **SECRET=KEY** = Essa chave precisa conter qualquer valor, só não de ser nula.
 
+após a configuração, é preciso rodar as migrações. utilize o comando:
+````
+yarn typeorm migration:run -d src/data-source
+````
+
 _______________________________________________________________________________________________________________________________________________________________________
 
 ## :bullettrain_side: Rotas
